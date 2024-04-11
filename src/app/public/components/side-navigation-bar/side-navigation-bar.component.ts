@@ -39,7 +39,9 @@ export class SideNavigationBarComponent implements OnInit {
         this.sources = data['sources'];
         this.sources.forEach((source: { urlToLogo: string; }) => source.urlToLogo = this.logoApi.getUrlToLogo(source));
         console.log(this.sources);
+        this.searchArticlesForSource(this.sources[0]);
       });
+
   }
 
 
