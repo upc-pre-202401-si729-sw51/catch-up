@@ -17,11 +17,13 @@ import {MatCardModule} from "@angular/material/card";
 import {MatMenuModule} from "@angular/material/menu";
 import {NgOptimizedImage} from "@angular/common";
 import { ArticleListComponent } from './news/components/article-list/article-list.component';
+import { SideNavigationBarComponent } from './public/components/side-navigation-bar/side-navigation-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArticleListComponent
+    ArticleListComponent,
+    SideNavigationBarComponent
   ],
   imports: [
     BrowserModule,
