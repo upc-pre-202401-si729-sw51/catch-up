@@ -1,1 +1,20 @@
-<p>side-navigation-bar works!</p>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport>
+    <mat-toolbar>Sources</mat-toolbar>
+    <mat-nav-list>
+      <mat-list-item (click)="onSourceSelected(source);drawer.toggle();" *ngFor="let source of sources">
+        <img [alt]="source.name" [ngSrc]="source.urlToLogo" height="60" width="60" matListItemAvatar>
+        <p matListItemLine><span>{{ source.name }}</span></p>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button (click)="drawer.toggle()" aria-label="Toggle sidenav" mat-icon-button type="button">
+        <mat-icon aria-label="Sidenav toggle icon">menu</mat-icon>
+      </button>
+      <span>CatchUp</span>
+    </mat-toolbar>
+    <app-article-list [articles]="articles"/>
+  </mat-sidenav-content>
+</mat-sidenav-container>
